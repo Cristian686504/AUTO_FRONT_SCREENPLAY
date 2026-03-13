@@ -6,14 +6,17 @@ Repositorios a los que se le aplica el test: https://github.com/orgs/equipo-6-ur
 
 ## Tecnologías
 
-| Herramienta          | Versión  |
-|----------------------|----------|
-| Java                 | 17+      |
-| Gradle               | 8.10.2   |
-| Serenity BDD         | 4.2.1    |
-| Serenity Screenplay  | 4.2.1    |
-| Serenity Cucumber    | 4.2.1    |
-| JUnit 4              | 4.13.2   |
+| Herramienta              | Versión  |
+|--------------------------|----------|
+| Java                     | 17+      |
+| Gradle                   | 8.10.2   |
+| Serenity BDD             | 5.3.2    |
+| Serenity Screenplay      | 5.3.2    |
+| Serenity Cucumber        | 5.3.2    |
+| Cucumber JUnit Platform  | 7.34.2   |
+| JUnit Platform Suite     | 6.0.3    |
+| JUnit Jupiter Engine     | 6.0.3    |
+| AssertJ Core             | 3.23.1   |
 
 ## Patrón Screenplay
 
@@ -82,16 +85,21 @@ src/test/
 ./gradlew.bat compileTestJava
 
 # Ejecutar todos los tests y generar reportes Serenity
-./gradlew.bat test
+./gradlew.bat clean test
 
 # Ejecutar solo el happy path
-./gradlew.bat test -Dcucumber.filter.tags="@happy_path"
+./gradlew.bat clean test -Dcucumber.filter.tags="@happy_path"
+
+# Ejecutar todos los escenarios E2E
+./gradlew.bat clean test -Dcucumber.filter.tags="@e2e"
 
 # Generar reportes Serenity manualmente
 ./gradlew.bat aggregate
 ```
 
 Los reportes Serenity se generan en `target/site/serenity/index.html`.
+
+> Los reportes incluyen screenshots automáticos por cada acción, pasos del actor y evidencia visual de fallos.
 
 ## Configuración
 
@@ -120,3 +128,5 @@ environments {
     }
 }
 ```
+
+> Para ejecutar en modo headless (sin interfaz gráfica), establecer `headless.mode = true`.
