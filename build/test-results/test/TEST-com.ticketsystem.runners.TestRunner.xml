@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ticketsystem.runners.TestRunner" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-03-13T01:11:08" hostname="DESKTOP-4KT9M21" time="14.563">
+  <properties/>
+  <testcase name="Example #1.1" classname="com.ticketsystem.runners.TestRunner" time="14.563"/>
+  <system-out><![CDATA[
+@ticket @e2e @happy_path
+?[1mScenario Outline:?[22m Crear un ticket exitosamente con usuario administrador                                                                                                         ?[90m# classpath:features/crear_ticket.feature:23?[39m
+  ?[32m✔?[39m ?[32m?[1mGiven ?[22mque el usuario navega a la pagina de login?[39m                                                                                                                             ?[90m# com.ticketsystem.stepdefinitions.CrearTicketSteps.queElUsuarioNavegaALaPaginaDeLogin()?[39m
+  ?[32m✔?[39m ?[32m?[1mWhen ?[22mel usuario inicia sesion con correo ?[1m"admin@sofkau.com"?[22m y contrasena ?[1m"Admin@SofkaU_2026!"?[22m?[39m                                                                                ?[90m# com.ticketsystem.stepdefinitions.CrearTicketSteps.elUsuarioIniciaSesionConCorreoYContrasena(java.lang.String,java.lang.String)?[39m
+  ?[32m✔?[39m ?[32m?[1mThen ?[22mel usuario es redirigido a la lista de tickets?[39m                                                                                                                          ?[90m# com.ticketsystem.stepdefinitions.CrearTicketSteps.elUsuarioEsRedirigidoALaListaDeTickets()?[39m
+  ?[32m✔?[39m ?[32m?[1mWhen ?[22mel usuario navega al formulario de creacion de ticket?[39m                                                                                                                   ?[90m# com.ticketsystem.stepdefinitions.CrearTicketSteps.elUsuarioNavegaAlFormularioDeCreacionDeTicket()?[39m
+  ?[32m✔?[39m ?[32m?[1mAnd ?[22mel usuario completa el titulo con ?[1m"Ticket de prueba automatizada"?[22m?[39m                                                                                                        ?[90m# com.ticketsystem.stepdefinitions.CrearTicketSteps.elUsuarioCompletaElTituloCon(java.lang.String)?[39m
+  ?[32m✔?[39m ?[32m?[1mAnd ?[22mel usuario completa la descripcion con ?[1m"Este ticket fue creado de forma automatizada mediante Selenium con Screenplay para validar el flujo E2E de creacion de tickets."?[22m?[39m ?[90m# com.ticketsystem.stepdefinitions.CrearTicketSteps.elUsuarioCompletaLaDescripcionCon(java.lang.String)?[39m
+  ?[32m✔?[39m ?[32m?[1mAnd ?[22mel usuario envia el formulario de ticket?[39m                                                                                                                                 ?[90m# com.ticketsystem.stepdefinitions.CrearTicketSteps.elUsuarioEnviaElFormularioDeTicket()?[39m
+  ?[32m✔?[39m ?[32m?[1mThen ?[22mel usuario es redirigido a la lista de tickets?[39m                                                                                                                          ?[90m# com.ticketsystem.stepdefinitions.CrearTicketSteps.elUsuarioEsRedirigidoALaListaDeTickets()?[39m
+  ?[32m✔?[39m ?[32m?[1mAnd ?[22mel ticket ?[1m"Ticket de prueba automatizada"?[22m se muestra en la lista de tickets?[39m                                                                                              ?[90m# com.ticketsystem.stepdefinitions.CrearTicketSteps.elTicketSeMuestraEnLaListaDeTickets(java.lang.String)?[39m
+]]></system-out>
+  <system-err><![CDATA[SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+SLF4J(W): Class path contains SLF4J bindings targeting slf4j-api versions 1.7.x or earlier.
+SLF4J(W): Ignoring binding found at [jar:file:/C:/Users/crist/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-classic/1.2.10/f69d97ef3335c6ab82fc21dfb77ac613f90c1221/logback-classic-1.2.10.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J(W): See https://www.slf4j.org/codes.html#ignoredBindings for an explanation.
+mar 12, 2026 10:11:23 P. M. org.junit.platform.launcher.core.DiscoveryIssueNotifier logIssues
+WARNING: TestEngine with ID 'cucumber' encountered a non-critical issue during test discovery:
+
+(1) [WARNING] The classpath resource selector 'features' should not be used to select features in a package. Use the package selector with 'features' instead
+]]></system-err>
+</testsuite>

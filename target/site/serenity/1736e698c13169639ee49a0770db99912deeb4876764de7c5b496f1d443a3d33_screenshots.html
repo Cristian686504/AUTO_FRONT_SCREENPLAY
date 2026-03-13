@@ -1,0 +1,419 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff"><link rel="stylesheet" href="bootstrap-icons/bootstrap-icons.css">
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-3.7.1.min.js"></script><!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/2.3.1/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/2.3.1/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/2.3.1/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/>
+<!--CHART.JS-->
+<script src="chartjs/chart.js"></script>
+<script src="chartjs/chartjs-plugin-datalabels@2.0.0.min.js"></script>
+<script src="chartjs/patternomaly.min.js"></script>
+<script>
+    // Register the plugin to all charts:
+    Chart.register(ChartDataLabels);
+</script>
+
+    <!-- Swiper.js local styles and script -->
+    <link rel="stylesheet" href="swiper/swiper-bundle.min.css" />
+    <script src="swiper/swiper-bundle.min.js"></script>
+
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const startIndex = parseInt(urlParams.get("screenshot")) || 0;
+
+            new Swiper('.swiper', {
+                initialSlide: startIndex,
+                effect: 'fade',
+                speed: 200,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                    renderBullet: function (index, className) {
+                        return '<span class="' + className + '">' + (index + 1) + "</span>";
+                    },
+                    dynamicBullets: true,
+                    dynamicMainBullets: 3  // Shows 3 main bullets + 2 smaller ones on sides
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev'
+                },
+                keyboard: {
+                    enabled: true,
+                    onlyInViewport: true
+                }
+            });
+        });
+    </script>
+
+    <style>
+        .swiper {
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        .swiper-slide img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .swiper-pagination-bullet {
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+            font-size: 12px;
+            color: #000;
+            opacity: 1;
+            background: lightgrey;
+        }
+
+        .swiper-pagination-bullet-active {
+            color: #fff;
+            background: #007aff;
+        }
+    </style>
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Serenity BDD Report</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="ee786c386121f5d333e91fd45ec501ddb09dfc916fc356bec9884fdc819f43ba.html">Creacion De Un Ticket De Soporte</a></span>
+                > <span class="truncate-60"><a
+                    href="1736e698c13169639ee49a0770db99912deeb4876764de7c5b496f1d443a3d33.html">Crear un ticket exitosamente con usuario administrador </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="bi bi-journal-check"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="bi bi-journal-text"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="bi bi-chat-text"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 12-03-2026 22:11</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fs-2 bi bi-chat-left-quote large-icon"></i>
+                                    <span class="story-header-title">Creacion De Un Ticket De Soporte</span>
+                                    <span class="badge tag-badge" style="">Feature</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                Como usuario autenticado del sistema<br />
+Quiero crear un ticket de soporte<br />
+Para que el sistema lo registre y se muestre en la lista de tickets
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="41f5205d6d58c0b87620866aba63cb6e3d1be42b6c5018f18cc7c680fcccb866.html">E2e
+                                </a>
+                                </span>
+                            </p>
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="3efb083d8a3f2c29e74eece3a6242afad188e2cf5269f1dd29d70728716eb925.html">Happy Path
+                                </a>
+                                </span>
+                            </p>
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="34658a1663fcf042bd7acb3325affbe4e647c8acd84d0228be2f52e1381e61b9.html">10 To 30 Seconds
+                                        (Duration)
+                                </a>
+                                </span>
+                            </p>
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink" style="background:default;" href="962673217519010fe2b831f5e2a2f2f1da6ca473eb6a154ef5a91d8fca5f8ed0.html">Ticket
+                                </a>
+                                </span>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">Crear un ticket exitosamente con usuario administrador
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+    <div class="story-title">
+        <h3>Scenario:</h3>
+        <div class="scenario">When el usuario inicia sesion con correo "&lt;correo&gt;" y contrasena "&lt;contrasena&gt;"<br>Then el usuario es redirigido a la lista de tickets<br>When el usuario navega al formulario de creacion de ticket<br>And el usuario completa el titulo con "&lt;titulo&gt;"<br>And el usuario completa la descripcion con "&lt;descripcion&gt;"<br>And el usuario envia el formulario de ticket<br>Then el usuario es redirigido a la lista de tickets<br>And el ticket "&lt;titulo&gt;" se muestra en la lista de tickets</div>
+    </div>
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+    <!-- Swiper Carousel -->
+    <div class="swiper">
+        <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="438f59861729ba29a4388789253947c5257531da2b2e65fe517994dd9fa45dc4.png" title=" 1: Crear un ticket exitosamente con usuario administrador ({correo=admin@sofkau.com, contrasena=Admin@SofkaU_2026!, titulo=Ticket de prueba automatizada, descripcion=Este ticket fue creado de forma automatizada mediante Selenium con Screenplay para validar el flujo E2E de creacion de tickets.})" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="438f59861729ba29a4388789253947c5257531da2b2e65fe517994dd9fa45dc4.png" title=" Given que el usuario navega a la pagina de login" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="438f59861729ba29a4388789253947c5257531da2b2e65fe517994dd9fa45dc4.png" title=" Usuario navigate to login page" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="438f59861729ba29a4388789253947c5257531da2b2e65fe517994dd9fa45dc4.png" title=" Usuario opens the /login" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="438f59861729ba29a4388789253947c5257531da2b2e65fe517994dd9fa45dc4.png" title=" Usuario navigate to login page (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="2e5e82287d29a07f50b9a3f15038f7550ee8cd65d4b3d15727f3037de6b28803.png" title=" Usuario should see La pagina de login no cargo correctamente that is true" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="2e5e82287d29a07f50b9a3f15038f7550ee8cd65d4b3d15727f3037de6b28803.png" title=" Given que el usuario navega a la pagina de login (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="ef515286e9d465aab76cb10de6c805acf8086b8014a11a8d6ebb0c9c1dfc5544.png" title=" When el usuario inicia sesion con correo &quot;admin@sofkau.com&quot; y contrasena &quot;Admin@SofkaU_2026!&quot;" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="ef515286e9d465aab76cb10de6c805acf8086b8014a11a8d6ebb0c9c1dfc5544.png" title=" Usuario login with credentials" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="ef515286e9d465aab76cb10de6c805acf8086b8014a11a8d6ebb0c9c1dfc5544.png" title=" Usuario enters 'admin@sofkau.com' into campo de email" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="398d3270f73f29e8e2a8121dd7f83bff1cd370bee5c998a262eaed6cf31afe1e.png" title=" Usuario enters 'Admin@SofkaU_2026!' into campo de contrase&ntilde;a" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="e9ed3614b8f3b81f6e1622e9941a4112b0412a85f76691826a0593c0382047ae.png" title=" Usuario clicks on bot&oacute;n de login" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="e9ed3614b8f3b81f6e1622e9941a4112b0412a85f76691826a0593c0382047ae.png" title=" Usuario login with credentials (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="0ca9224e0bd845a821da763bee370f1ae3c958d165f878406461d6a1ea90f5c8.png" title=" When el usuario inicia sesion con correo &quot;admin@sofkau.com&quot; y contrasena &quot;Admin@SofkaU_2026!&quot; (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="0ca9224e0bd845a821da763bee370f1ae3c958d165f878406461d6a1ea90f5c8.png" title=" Then el usuario es redirigido a la lista de tickets" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="0ca9224e0bd845a821da763bee370f1ae3c958d165f878406461d6a1ea90f5c8.png" title=" Usuario should see El usuario no fue redirigido a la lista de tickets that is true" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="0ca9224e0bd845a821da763bee370f1ae3c958d165f878406461d6a1ea90f5c8.png" title=" Then el usuario es redirigido a la lista de tickets (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="2d09fa0be1b014f7bcbf8a57de1b8d582622dcce3eb1812c269c4452a09b8f9a.png" title=" When el usuario navega al formulario de creacion de ticket" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="2d09fa0be1b014f7bcbf8a57de1b8d582622dcce3eb1812c269c4452a09b8f9a.png" title=" Usuario navigate to create ticket form" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="2d09fa0be1b014f7bcbf8a57de1b8d582622dcce3eb1812c269c4452a09b8f9a.png" title=" Usuario clicks on enlace para crear ticket" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="2d09fa0be1b014f7bcbf8a57de1b8d582622dcce3eb1812c269c4452a09b8f9a.png" title=" Usuario navigate to create ticket form (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="2d09fa0be1b014f7bcbf8a57de1b8d582622dcce3eb1812c269c4452a09b8f9a.png" title=" Usuario should see La pagina de crear ticket no cargo correctamente that is true" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="2d09fa0be1b014f7bcbf8a57de1b8d582622dcce3eb1812c269c4452a09b8f9a.png" title=" When el usuario navega al formulario de creacion de ticket (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="7d5718d63552aa806be1e3956b266b56536bdaa1392642a81d15b7060a129882.png" title=" And el usuario completa el titulo con &quot;Ticket de prueba automatizada&quot;" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="7d5718d63552aa806be1e3956b266b56536bdaa1392642a81d15b7060a129882.png" title=" Usuario enter ticket title" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="7d5718d63552aa806be1e3956b266b56536bdaa1392642a81d15b7060a129882.png" title=" Usuario enters 'Ticket de prueba automatizada' into campo de t&iacute;tulo del ticket" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="7d5718d63552aa806be1e3956b266b56536bdaa1392642a81d15b7060a129882.png" title=" Usuario enter ticket title (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="7d5718d63552aa806be1e3956b266b56536bdaa1392642a81d15b7060a129882.png" title=" And el usuario completa el titulo con &quot;Ticket de prueba automatizada&quot; (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="f8bd2e4d3c58f333cb7b18f9ef40ab257b34c1e2ca3eef25e6fdd4270da40bec.png" title=" And el usuario completa la descripcion con &quot;Este ticket fue creado de forma automatizada mediante Selenium con Screenplay para validar el flujo E2E de creacion de tickets.&quot;" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="f8bd2e4d3c58f333cb7b18f9ef40ab257b34c1e2ca3eef25e6fdd4270da40bec.png" title=" Usuario enter ticket description" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="f8bd2e4d3c58f333cb7b18f9ef40ab257b34c1e2ca3eef25e6fdd4270da40bec.png" title=" Usuario enters 'Este ticket fue creado de forma automatizada mediante Selenium con Screenplay para validar el flujo E2E de creacion de tickets.' into campo de descripci&oacute;n del ticket" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="f8bd2e4d3c58f333cb7b18f9ef40ab257b34c1e2ca3eef25e6fdd4270da40bec.png" title=" And el usuario completa la descripcion con &quot;Este ticket fue creado de forma automatizada mediante Selenium con Screenplay para validar el flujo E2E de creacion de tickets.&quot;" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="f8bd2e4d3c58f333cb7b18f9ef40ab257b34c1e2ca3eef25e6fdd4270da40bec.png" title=" Usuario enter ticket description (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="ac13d0c0e879ebc55cdcec814911804b538159726e53daa0a509d3bd5829155e.png" title=" And el usuario envia el formulario de ticket" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="ac13d0c0e879ebc55cdcec814911804b538159726e53daa0a509d3bd5829155e.png" title=" Usuario submit ticket form" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="ac13d0c0e879ebc55cdcec814911804b538159726e53daa0a509d3bd5829155e.png" title=" Usuario clicks on bot&oacute;n de enviar ticket" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="ac13d0c0e879ebc55cdcec814911804b538159726e53daa0a509d3bd5829155e.png" title=" Usuario submit ticket form (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="ac13d0c0e879ebc55cdcec814911804b538159726e53daa0a509d3bd5829155e.png" title=" And el usuario envia el formulario de ticket (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="6e93bbabecf0ac6646340652d9188741b02595798df3c0c0d3a6b4c43c13e116.png" title=" Then el usuario es redirigido a la lista de tickets" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="6e93bbabecf0ac6646340652d9188741b02595798df3c0c0d3a6b4c43c13e116.png" title=" Usuario should see El usuario no fue redirigido a la lista de tickets that is true" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="6e93bbabecf0ac6646340652d9188741b02595798df3c0c0d3a6b4c43c13e116.png" title=" Then el usuario es redirigido a la lista de tickets (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="df489f7a360a3cc1ac5ed5745b3a76f21db1bd30c37df7b60edd052bc22bb219.png" title=" And el ticket &quot;Ticket de prueba automatizada&quot; se muestra en la lista de tickets" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="df489f7a360a3cc1ac5ed5745b3a76f21db1bd30c37df7b60edd052bc22bb219.png" title=" Usuario should see El ticket 'Ticket de prueba automatizada' no se encontro en la lista de tickets that is true" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="df489f7a360a3cc1ac5ed5745b3a76f21db1bd30c37df7b60edd052bc22bb219.png" title=" And el ticket &quot;Ticket de prueba automatizada&quot; se muestra en la lista de tickets (completed)" width="0" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="df489f7a360a3cc1ac5ed5745b3a76f21db1bd30c37df7b60edd052bc22bb219.png" title=" 1: Crear un ticket exitosamente con usuario administrador ({correo=admin@sofkau.com, contrasena=Admin@SofkaU_2026!, titulo=Ticket de prueba automatizada, descripcion=Este ticket fue creado de forma automatizada mediante Selenium con Screenplay para validar el flujo E2E de creacion de tickets.}) (completed): <span class='success-color'>SUCCESS</span>" width="0" />
+                </div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 5.3.2</span>
+</div>
+</body>
+</html>

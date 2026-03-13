@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - TestRunner</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>TestRunner</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.ticketsystem.runners.html">com.ticketsystem.runners</a> &gt; TestRunner</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">14.563s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+<li>
+<a href="#tab2">Standard error</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">Example #1.1</td>
+<td class="success">14.563s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>
+@ticket @e2e @happy_path
+?[1mScenario Outline:?[22m Crear un ticket exitosamente con usuario administrador                                                                                                         ?[90m# classpath:features/crear_ticket.feature:23?[39m
+  ?[32m✔?[39m ?[32m?[1mGiven ?[22mque el usuario navega a la pagina de login?[39m                                                                                                                             ?[90m# com.ticketsystem.stepdefinitions.CrearTicketSteps.queElUsuarioNavegaALaPaginaDeLogin()?[39m
+  ?[32m✔?[39m ?[32m?[1mWhen ?[22mel usuario inicia sesion con correo ?[1m&quot;admin@sofkau.com&quot;?[22m y contrasena ?[1m&quot;Admin@SofkaU_2026!&quot;?[22m?[39m                                                                                ?[90m# com.ticketsystem.stepdefinitions.CrearTicketSteps.elUsuarioIniciaSesionConCorreoYContrasena(java.lang.String,java.lang.String)?[39m
+  ?[32m✔?[39m ?[32m?[1mThen ?[22mel usuario es redirigido a la lista de tickets?[39m                                                                                                                          ?[90m# com.ticketsystem.stepdefinitions.CrearTicketSteps.elUsuarioEsRedirigidoALaListaDeTickets()?[39m
+  ?[32m✔?[39m ?[32m?[1mWhen ?[22mel usuario navega al formulario de creacion de ticket?[39m                                                                                                                   ?[90m# com.ticketsystem.stepdefinitions.CrearTicketSteps.elUsuarioNavegaAlFormularioDeCreacionDeTicket()?[39m
+  ?[32m✔?[39m ?[32m?[1mAnd ?[22mel usuario completa el titulo con ?[1m&quot;Ticket de prueba automatizada&quot;?[22m?[39m                                                                                                        ?[90m# com.ticketsystem.stepdefinitions.CrearTicketSteps.elUsuarioCompletaElTituloCon(java.lang.String)?[39m
+  ?[32m✔?[39m ?[32m?[1mAnd ?[22mel usuario completa la descripcion con ?[1m&quot;Este ticket fue creado de forma automatizada mediante Selenium con Screenplay para validar el flujo E2E de creacion de tickets.&quot;?[22m?[39m ?[90m# com.ticketsystem.stepdefinitions.CrearTicketSteps.elUsuarioCompletaLaDescripcionCon(java.lang.String)?[39m
+  ?[32m✔?[39m ?[32m?[1mAnd ?[22mel usuario envia el formulario de ticket?[39m                                                                                                                                 ?[90m# com.ticketsystem.stepdefinitions.CrearTicketSteps.elUsuarioEnviaElFormularioDeTicket()?[39m
+  ?[32m✔?[39m ?[32m?[1mThen ?[22mel usuario es redirigido a la lista de tickets?[39m                                                                                                                          ?[90m# com.ticketsystem.stepdefinitions.CrearTicketSteps.elUsuarioEsRedirigidoALaListaDeTickets()?[39m
+  ?[32m✔?[39m ?[32m?[1mAnd ?[22mel ticket ?[1m&quot;Ticket de prueba automatizada&quot;?[22m se muestra en la lista de tickets?[39m                                                                                              ?[90m# com.ticketsystem.stepdefinitions.CrearTicketSteps.elTicketSeMuestraEnLaListaDeTickets(java.lang.String)?[39m
+</pre>
+</span>
+</div>
+<div id="tab2" class="tab">
+<h2>Standard error</h2>
+<span class="code">
+<pre>SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+SLF4J(W): Class path contains SLF4J bindings targeting slf4j-api versions 1.7.x or earlier.
+SLF4J(W): Ignoring binding found at [jar:file:/C:/Users/crist/.gradle/caches/modules-2/files-2.1/ch.qos.logback/logback-classic/1.2.10/f69d97ef3335c6ab82fc21dfb77ac613f90c1221/logback-classic-1.2.10.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J(W): See https://www.slf4j.org/codes.html#ignoredBindings for an explanation.
+mar 12, 2026 10:11:23 P. M. org.junit.platform.launcher.core.DiscoveryIssueNotifier logIssues
+WARNING: TestEngine with ID 'cucumber' encountered a non-critical issue during test discovery:
+
+(1) [WARNING] The classpath resource selector 'features' should not be used to select features in a package. Use the package selector with 'features' instead
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.10.2</a> at 12 mar 2026, 22:11:23</p>
+</div>
+</div>
+</body>
+</html>
